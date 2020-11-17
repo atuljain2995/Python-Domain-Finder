@@ -16,17 +16,19 @@ updatedUserInput = re.sub('[^A-Za-z0-9]+','',userInputString)
 
 # print(updatedUserInput)
 
-presentLastTwo = ''
 userInputLength = len(updatedUserInput)
 
 while( userInputLength > 2 ):
-    currentDomain = updatedUserInput[userInputLength-2:userInputLength]
-    if(userInputLength == len(updatedUserInput)):
-        leftOverPath = ''
+    currentDomain = updatedUserInput[userInputLength -2 :userInputLength]
+    leftOverPath = updatedUserInput[userInputLength:]
+    
+    if(leftOverPath):
+        leftOverPath = "/" + leftOverPath
     else:
-        leftOverPath = updatedUserInput[userInputLength+1:]
+        leftOverPath
+    
     if currentDomain in myList:
-        print(updatedUserInput[:userInputLength-2]+"."+currentDomain+"/"+leftOverPath)
+        print(updatedUserInput[:userInputLength - 2] + "." + currentDomain + leftOverPath)
         userInputLength -= 1
     else:
         userInputLength -= 1
