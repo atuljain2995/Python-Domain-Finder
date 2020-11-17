@@ -9,7 +9,7 @@ myList = myInput.split(" ")
 
 
 #Taking user input for phrase
-userInputString = input("{}Enter a phrase, and we'll try to find some URLs that matche: " .format('\n')).lower()
+userInputString = input("{}Enter a phrase, and we'll try to find some URLs that match: " .format('\n')).lower()
 
 #Using regex substitution to remove whitespace and special characters
 updatedUserInput = re.sub('[^A-Za-z0-9]+','',userInputString)
@@ -19,7 +19,7 @@ updatedUserInput = re.sub('[^A-Za-z0-9]+','',userInputString)
 presentLastTwo = ''
 userInputLength = len(updatedUserInput)
 
-while( userInputLength > 1 ):
+while( userInputLength > 2 ):
     currentDomain = updatedUserInput[userInputLength-2:userInputLength]
     if(userInputLength == len(updatedUserInput)):
         leftOverPath = ''
